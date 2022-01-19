@@ -27,8 +27,8 @@ export const useCalculateStore = defineStore('calculate', () => {
 
     let mathExpression = expression.value
 
-    mathExpression = mathExpression.replace('×', '*')
-    mathExpression = mathExpression.replace('÷', '/')
+    mathExpression = mathExpression.replaceAll('×', '*')
+    mathExpression = mathExpression.replaceAll('÷', '/')
 
     try {
       ans.value = `${evalFormat(mathExpression)}`
